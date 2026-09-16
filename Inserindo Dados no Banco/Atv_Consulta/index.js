@@ -14,7 +14,8 @@ app.use(express.json())
 
 // Rota Base
 app.get('/', (req, res) => {
-    res.json({ mensagem: 'API de Estacionamento Rodando perfeitamente!' })
+    res.json({ mensagem: 'API de
+    Estacionamento Rodando perfeitamente!' })
 })
 
 
@@ -27,9 +28,14 @@ app.get('/Cliente', async (req, res) => {
 })
 
 app.post('/inserir_Cliente', async (req, res) => {
-    const { codigo, nome, sobreNome, cpf, telefone, id_limite, id_endereco } = req.body;
-    const infos = [codigo, nome, sobreNome, cpf, telefone, id_limite, id_endereco];
-    let results = await inserir_Cliente(infos);
+    const { codigo, nome, sobreNome, cpf,              
+
+    telefone, id_limite, id_endereco } =        
+    req.body;
+    const infos = [codigo, nome, sobreNome,
+    cpf, telefone, id_limite, id_endereco];
+    let results = await.
+    inserir_Cliente(infos);
     res.json(results);
 })
 
@@ -41,22 +47,28 @@ app.post('/Limite', async (req, res) => {
 })
 
 app.post('/Endereco', async (req, res) => {
-    let { id_endereco, logradouro, numero, cep, cidade } = req.body;
-    let infos = [id_endereco, logradouro, numero, cep, cidade]
+    let { id_endereco, logradouro, numero,
+    cep, cidade } = req.body;
+    let infos = [id_endereco, logradouro,
+    numero, cep, cidade]
     let results = await Endereco(infos);
     res.json(results);
 })
 
 app.post('/Produto', async (req, res) => {
-    let { codigo, nome, descricao, preco } = req.body;
-    let infos = [codigo, nome, descricao, preco]
+    let { codigo, nome, descricao, preco } =
+    req.body;
+    let infos = [codigo, nome, descricao,
+    preco]
     let results = await Produto(infos);
     res.json(results);
 })
 
 app.post('/Pedido', async (req, res) => {
-    let { numero, data_elaboracao, id_cliente } = req.body;
-    let infos = [numero, data_elaboracao, id_cliente]
+    let { numero, data_elaboracao,
+    id_cliente } = req.body;
+    let infos = [numero, data_elaboracao,
+    id_cliente]
     let results = await Pedido(infos);
     res.json(results);
 })
@@ -64,7 +76,8 @@ app.post('/Pedido', async (req, res) => {
 app.post('/Pedido_Produto', async (req, res) => {
     let { id_pedido, id_produto } = req.body;
     let infos = [id_pedido, id_produto]
-    let results = await Pedido_Produto(infos);
+    let results = await.
+    Pedido_Produto(infos);
     res.json(results);
 })
 
