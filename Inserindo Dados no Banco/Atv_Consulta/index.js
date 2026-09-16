@@ -32,8 +32,8 @@ app.post('/inserir_Cliente', async (req, res) => {
     telefone, id_limite, id_endereco } =        
     req.body;
     const infos = [codigo, nome, sobreNome,
-    cpf, telefone, id_limite, id_endereco];
-    let results = await.
+    cpf, telefone, id_limite, id_endereco]
+    let results = await
     inserir_Cliente(infos);
     res.json(results);
 })
