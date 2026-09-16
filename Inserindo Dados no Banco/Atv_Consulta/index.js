@@ -29,7 +29,6 @@ app.get('/Cliente', async (req, res) => {
 
 app.post('/inserir_Cliente', async (req, res) => {
     const { codigo, nome, sobreNome, cpf,              
-
     telefone, id_limite, id_endereco } =        
     req.body;
     const infos = [codigo, nome, sobreNome,
