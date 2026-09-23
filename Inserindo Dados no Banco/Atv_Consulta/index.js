@@ -14,12 +14,8 @@ app.use(express.json())
 
 // Rota Base
 app.get('/', (req, res) => {
-    res.json({ mensagem: 'API de
-    Estacionamento Rodando perfeitamente!' })
+    res.json({ mensagem: 'API deEstacionamento Rodando perfeitamente!'})
 })
-
-
-
 
 app.get('/Cliente', async (req, res) => {
 
@@ -75,8 +71,7 @@ app.post('/Pedido', async (req, res) => {
 app.post('/Pedido_Produto', async (req, res) => {
     let { id_pedido, id_produto } = req.body;
     let infos = [id_pedido, id_produto]
-    let results = await.
-    Pedido_Produto(infos);
+    let results = await Pedido_Produto(infos);
     res.json(results);
 })
 
