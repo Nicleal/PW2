@@ -40,7 +40,7 @@ app.get('/Cliente', async (req, res) => {
 
 
 //Upgrades
-app.post('/upgrade_Cliente', async (req, res) => {
+app.put('/upgrade_Cliente', async (req, res) => {
     const { codigo, nome, sobreNome, cpf,telefone, id_limite, id_endereco } = req.body;
     const infos = [codigo, nome, sobreNome,cpf, telefone, id_limite, id_endereco]
     let results = await upgradeCliente(infos);
@@ -48,14 +48,14 @@ app.post('/upgrade_Cliente', async (req, res) => {
 })
 
 
-app.post('/upgrade_Limite', async (req, res) => {
+app.put('/upgrade_Limite', async (req, res) => {
     let { id_limite, nome } = req.body;
     let infos = [id_limite, nome]
     let results = await upgradeLimite(infos);
     res.json(results);
 })
 
-app.post('/upgrade_Endereco', async (req, res) => {
+app.put('/upgrade_Endereco', async (req, res) => {
     let { id_endereco, logradouro, numero,
     cep, cidade } = req.body;
     let infos = [id_endereco, logradouro,
@@ -64,21 +64,21 @@ app.post('/upgrade_Endereco', async (req, res) => {
     res.json(results);
 })
 
-app.post('/upgrade_Produto', async (req, res) => {
+app.put('/upgrade_Produto', async (req, res) => {
     let { codigo, nome, descricao, preco } = req.body;
     let infos = [codigo, nome, descricao,preco]
     let results = await upgradeProduto(infos);
     res.json(results);
 })
 
-app.post('/upgrade_Pedido', async (req, res) => {
+app.put('/upgrade_Pedido', async (req, res) => {
     let { numero, data_elaboracao,id_cliente } = req.body;
     let infos = [numero, data_elaboracao,id_cliente]
     let results = await upgradePedido(infos);
     res.json(results);
 })
 
-app.post('/upgradePedido_Produto', async (req, res) => {
+app.put('/upgradePedido_Produto', async (req, res) => {
     let { id_pedido, id_produto } = req.body;
     let infos = [id_pedido, id_produto]
     let results = await upgradePedido_Produto(infos);
@@ -88,42 +88,42 @@ app.post('/upgradePedido_Produto', async (req, res) => {
 
 
 // Deletes
-app.post('/delete_Cliente', async (req, res) => {
+app.delete('/delete_Cliente', async (req, res) => {
     const { codigo, nome, sobreNome, cpf,telefone, id_limite, id_endereco } = req.body;
     const infos = [codigo, nome, sobreNome,cpf, telefone, id_limite, id_endereco]
     let results = await deleteCliente(infos);
     res.json(results);
 })
 
-app.post('/delete_Limite', async (req, res) => {
+app.delete('/delete_Limite', async (req, res) => {
     let { id_limite, nome } = req.body;
     let infos = [id_limite, nome]
     let results = await deleteLimite(infos);
     res.json(results);
 })
 
-app.post('/delete_Endereco', async (req, res) => {
+app.delete('/delete_Endereco', async (req, res) => {
     let { id_endereco, logradouro, numero, cep, cidade } = req.body;
     let infos = [id_endereco, logradouro,numero, cep, cidade]
     let results = await deleteEndereco(infos);
     res.json(results);
 })
 
-app.post('/delete_Produto', async (req, res) => {
+app.delete('/delete_Produto', async (req, res) => {
     let { codigo, nome, descricao, preco } = req.body;
     let infos = [codigo, nome, descricao,preco]
     let results = await deleteProduto(infos);
     res.json(results);
 })
 
-app.post('/delete_Pedido', async (req, res) => {
+app.delete('/delete_Pedido', async (req, res) => {
     let { numero, data_elaboracao,id_cliente } = req.body;
     let infos = [numero, data_elaboracao,id_cliente]
     let results = await deletePedido(infos);
     res.json(results);
 })
 
-app.post('/delete_Pedido_Produto', async (req, res) => {
+app.delete('/delete_Pedido_Produto', async (req, res) => {
     let { id_pedido, id_produto } = req.body;
     let infos = [id_pedido, id_produto]
     let results = await delete_Pedido_Produto(infos);
